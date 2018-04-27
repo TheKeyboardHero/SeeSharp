@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @model BeltcSharp.Models.CreateActivities
+                         <!-- ^is ths name of the class -->
+           
+
+    <table class="table table-striped">
+        <tr>
+            <th>Activity</th>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Event Description</th>
+            <th>Event Coordinator</th>
+            <th>Number of Participants</th>
+            <th>Join</th>
+            <th>Leave</th>
+            <th>Cancel Activity</th>
+        </tr>
+        <tr>
+            <td>@Model.Activity_Name</td>
+            <td>@Model.Activity_Date</td>
+            <td>@Model.Duration</td>
+            <td>@Model.Activity_Descript</td>
+            <td>@Model.Activity_Createdby</td>
+            <td>
+                <form action = "Attend" method="post">
+                    <input type="hidden" name="ActivityId" value=@Model.idActivity>
+                    <button>
+                        Join
+                    </button>
+                </form>
+            </td>
+
+            <td>
+                <form action = "CancelAttend" method="post">
+                    <input type="hidden" name="ActivityId" value=@Model.idActivity>
+                    <button>
+                        Leave
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action = "CancelActivity" method="post">
+                    <input type="hidden" name="ActivityId" value=@Model.idActivity>
+                    <button>
+                    Cancel Activity
+                    </button>
+                </form>
+            </td>
+        </tr>
+             
+                
+            
+    </table>
+    <p>STUFF</p>
+    <p>@ViewBag.Attendees.Users(First_Name)</p>
+   <p>BETWEEN</p>
+
+
+
+
+    
+
+    <a asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+</head>
+<body>
+    <div>
+        <h1>Register</h1>
+        
+        <table>
+            @model BeltcSharp.Models.Users
+            <form action="Register" method="post">
+                <tr>
+                    <td><label asp-for="First_Name">First Name</label></td>
+                    <td><input type="text" placeholder="First" name="First_Name"></td>
+                </tr>
+                <tr>
+					<td><label asp-for='Last_Name'>Last Name:</label></td>
+					<td><input type="text" placeholder="Last" name="Last_Name"></td>
+				</tr>
+                <tr>
+					<td><label asp-for='Email'>Email:</label></td>
+					<td><input type="text" placeholder="Email" name="Email"></td>
+				</tr>
+                <tr>
+					<td><label asp-for="Password">Password:</label></td>
+					<td><input type="Password" placeholder="Password" name="Password"></td>
+				</tr>
+                <tr>
+					<td><input type="submit" value="Register"></td>
+				</tr>
+            </form>
+			<!-- ERROR STUFF BELOW -->
+		<div>
+		@if(!(ViewBag.error is null))
+		{
+			foreach(var error in ViewBag.error)
+			{
+				//If there are any errors for a field...
+				if(@error.Errors.Count > 0)
+				{
+					// We show the first error for that field
+					<p>@error.Errors[0].ErrorMessage</p>
+				}
+			}
+		}
+</div>
+        </table>
+    </div>
+    <div>
+		
+        <h1>Login</h1>
+		<form action="Login" method='post'>
+			<table>
+				<tr>
+					<td><label for='email'>Email:</label></td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td><label for='password'>Password:</label></td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="Login" value='Login'></td>
+				</tr>
+			</table>
+		</form>
+		
+    </div>
+</body>
+</html>
+
+

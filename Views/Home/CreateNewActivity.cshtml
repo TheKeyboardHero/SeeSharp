@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Activity Planner</title>
+</head>
+<body>
+    <div>
+        
+        <h1>Create New Activity Event</h1>
+        
+        <table>
+            @model BeltcSharp.Models.CreateActivities
+            <form action="NewActivity" method="post">
+                <tr>
+					<td><label asp-for='Activity_Name'>Activity Event Name:</label></td>
+					<td><input type="Activity_Name" placeholder="Activity Name" name="Activity_Name"></td>
+				</tr>
+                <tr>
+                    <td><label asp-for="Duration">How long is activity:</label></td>
+                    <td><input type="text" placeholder="Person one" name="Duration"></td>
+                </tr>
+                <tr>
+					<td><label asp-for='Activity_Createdby'>Who's the Event Coordinator:</label></td>
+					<td><input type="text" placeholder="Event Coordinator" name="Activity_Createdby"></td>
+				</tr>
+
+                <tr>
+					<td><label asp-for='Activity_Date'>What Day is the activity:</label></td>
+					<td><input type="date" name="Activity_Date"></td>
+				</tr>
+                <tr>
+					<td><label asp-for="Activity_Descript">What's the Activity about:<br><br><br></label></td>
+					<td><input type="text" placeholder="What's the activity about" name="Activity_Descript"></td>
+				</tr>
+                
+                
+                <tr>
+					<td><input type="submit" value="Create"></td>
+				</tr>
+            </form>
+            @if(!(ViewBag.error is null))
+		{
+			foreach(var error in ViewBag.error)
+			{
+				//If there are any errors for a field...
+				if(@error.Errors.Count > 0)
+				{
+					
+					<p>@error.Errors[0].ErrorMessage</p>
+				}
+			}
+		}
+        </table>
+    </div>
+    <a asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
+    
+</body>
+</html>

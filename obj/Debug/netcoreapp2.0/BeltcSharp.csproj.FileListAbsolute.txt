@@ -1,0 +1,10 @@
+/Users/larrynapier/Desktop/BeltcSharp/bin/Debug/netcoreapp2.0/BeltcSharp.deps.json
+/Users/larrynapier/Desktop/BeltcSharp/bin/Debug/netcoreapp2.0/BeltcSharp.runtimeconfig.json
+/Users/larrynapier/Desktop/BeltcSharp/bin/Debug/netcoreapp2.0/BeltcSharp.runtimeconfig.dev.json
+/Users/larrynapier/Desktop/BeltcSharp/bin/Debug/netcoreapp2.0/BeltcSharp.dll
+/Users/larrynapier/Desktop/BeltcSharp/bin/Debug/netcoreapp2.0/BeltcSharp.pdb
+/Users/larrynapier/Desktop/BeltcSharp/obj/Debug/netcoreapp2.0/BeltcSharp.csproj.CoreCompileInputs.cache
+/Users/larrynapier/Desktop/BeltcSharp/obj/Debug/netcoreapp2.0/BeltcSharp.AssemblyInfoInputs.cache
+/Users/larrynapier/Desktop/BeltcSharp/obj/Debug/netcoreapp2.0/BeltcSharp.AssemblyInfo.cs
+/Users/larrynapier/Desktop/BeltcSharp/obj/Debug/netcoreapp2.0/BeltcSharp.dll
+/Users/larrynapier/Desktop/BeltcSharp/obj/Debug/netcoreapp2.0/BeltcSharp.pdb

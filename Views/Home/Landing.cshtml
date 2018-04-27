@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+
+    <!-- V~~~~~~~~~~~V   model's namespace -->
+@model List<BeltcSharp.Models.CreateActivities>
+                         <!-- ^is ths name of the class -->
+        <a asp-action="CreateNew" asp-controller="Home"><button>Create Activity Event</button></a>
+    @foreach(var activity in Model)
+    {  
+    <table class="table table-striped">
+        <tr>
+            <th>Activity</th>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Event Coordinator</th>
+            <th>Number of Participants</th>
+            <th>Join</th>
+            <th>Leave</th>
+            <th>Cancel Activity</th>
+        </tr>
+        
+        <tr>
+            <td>
+                <form action="/Dashboard" method="post">
+                    <input type="hidden" name="ActivityId" value=@activity.idActivity>
+                    <button>
+                        @activity.Activity_Name
+                    </button>
+                </form>
+            </td>
+            <td>@activity.Activity_Date</td>
+            <td>@activity.Duration</td>
+            <td>@activity.Activity_Createdby</td>
+            
+            <td>@activity.Attendees</td>
+    <!-- I want to put if statements checking session user to determin if buttons will show up -->
+               
+           
+            <td>
+                <form action = "Attend" method="post">
+                    <input type="hidden" name="ActivityId" value=@activity.idActivity>
+                    <button>
+                        Join
+                    </button>
+                </form>
+            </td>
+          
+
+            <td>
+                <form action = "CancelAttend" method="post">
+                    <input type="hidden" name="ActivityId" value=@activity.idActivity>
+                    <button>
+                        Leave
+                    </button>
+                </form>
+            </td>
+           
+            <td>
+                <form action = "CancelActivity" method="post">
+                    <input type="hidden" name="ActivityId" value=@activity.idActivity>
+                    <button>
+                    Cancel Activity
+                    </button>
+                </form>
+            </td>
+    
+        </tr>
+    </table>
+    }
+    
+    <a asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
+
+                    
+
+</body>
+</html>
